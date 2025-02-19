@@ -45,7 +45,7 @@ class MessagesController < ApplicationController
       receiver_id: message.receiver_id,
       content: message.content,
       created_at: message.created_at,
-      attachment_url: message.attachment.attached? ? url_for(message.attachment) : nil,
+      attachment_url: message.attachment.attached? ? rails_blob_url(message.attachment) : nil,
       attachment_content_type: message.attachment.attached? ? message.attachment.content_type : nil
     }
   end  
